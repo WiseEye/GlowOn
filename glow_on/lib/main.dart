@@ -1,5 +1,6 @@
 import 'package:glow_on/pages/Home.dart';
 import 'package:flutter/material.dart';
+import 'package:glow_on/pages/Register.dart';
 import 'package:glow_on/pages/Welcome.dart';
 
 void main() => runApp(MyApp());
@@ -48,7 +49,8 @@ MaterialColor colorCustom = MaterialColor(0xFFfd79a8, color);
         // is not restarted.
         primarySwatch: colorCustom,
       ),
-      home: BottomNavigationBarController(),
+      // home: BottomNavigationBarController(),
+      home: Register() ,
     );
   }
 }

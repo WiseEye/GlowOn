@@ -3,6 +3,8 @@ import 'package:glow_on/pages/Profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:glow_on/pages/Home.dart';
+
 import 'package:glow_on/pages/JobDetails.dart';
 
 class BottomNavigationBarController extends StatefulWidget {
@@ -153,15 +155,18 @@ class _HomeState extends State<Home> {
                 primary: true,
                 stretch: false,
                 centerTitle: false,
-                title: Text(
-                  "GlowOn",
-                  style: TextStyle(
-                      fontFamily: "OpenSans",
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                      color: Theme.of(context).primaryColor),
+                title: Container(
+                  // height: 50,
+                  // width: 52,
+                  decoration: BoxDecoration(
+                    image: new DecorationImage(
+                      fit: BoxFit.fill,
+                      image: new AssetImage("assets/images/logo.png"),
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(18.0)),
+                    //color: Colors.redAccent,
+                  ),
                 ),
-
                 actions: <Widget>[
                   IconButton(
                     icon: Icon(
