@@ -1,16 +1,41 @@
+import 'package:glow_on/pages/Home.dart';
 import 'package:flutter/material.dart';
-import 'package:glow_on/screens/HomeFeed.dart';
+import 'package:glow_on/pages/Welcome.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  
+  static Map<int, Color> color =
+{
+50:Color.fromRGBO(253,121,168, .1),
+100:Color.fromRGBO(253,121,168,.2),
+200:Color.fromRGBO(253,121,168,.3),
+300:Color.fromRGBO(253,121,168,.4),
+400:Color.fromRGBO(253,121,168,.5),
+500:Color.fromRGBO(253,121,168,.6),
+600:Color.fromRGBO(253,121,168,.7),
+700:Color.fromRGBO(253,121,168,.8),
+800:Color.fromRGBO(253,121,168,.9),
+900:Color.fromRGBO(253,121,168,1),
+};
+
+MaterialColor colorCustom = MaterialColor(0xFFfd79a8, color);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
+      //initialRoute: '/welcome',
+  routes: {
+    // When navigating to the "/" route, build the FirstScreen widget.
+    // '/home': (context) => BottomNavigationBarController(),
+    // When navigating to the "/second" route, build the SecondScreen widget.
+    //'/login': (context) => Login(),
+    '/home' : (context) => BottomNavigationBarController()
+    
+  },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -21,9 +46,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: colorCustom,
       ),
-      home: HomeFeed(),
+      home: BottomNavigationBarController(),
     );
   }
 }
@@ -99,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.display1,
             ),
           ],
         ),
