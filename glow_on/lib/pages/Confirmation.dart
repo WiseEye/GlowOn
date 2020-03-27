@@ -1,16 +1,15 @@
-// import 'package:glow_on/pages/CustomJobTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:glow_on/pages/Confirmation.dart';
+import 'package:glow_on/pages/Loginglowon.dart';
 
-class Register extends StatefulWidget {
-  const Register({Key key}) : super(key: key);
+class Confirmation extends StatefulWidget {
+  const Confirmation({Key key}) : super(key: key);
 
   @override
-  _RegisterState createState() => _RegisterState();
+  _ConfirmationState createState() => _ConfirmationState();
 }
 
-class _RegisterState extends State<Register> {
+class _ConfirmationState extends State<Confirmation> {
   PageController controller;
 
   double screenHight;
@@ -46,10 +45,23 @@ class _RegisterState extends State<Register> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
+              padding: const EdgeInsets.only(top: 10, bottom: 20, left: 0, right: 20),
+              child: Center(
+                child: Text(
+                  "Success!",
+                  style: TextStyle(
+                    color: Colors.pink[300],
+                    fontSize: 25,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.all(30.0),
               child: Center(
                 child: Text(
-                  "Are you ready to get your GlowOn?",
+                  "A confirmation code has been sent to random@gmail.com",
                   style: TextStyle(
                     color: Colors.pink[300],
                     fontSize: 25,
@@ -67,31 +79,7 @@ class _RegisterState extends State<Register> {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                     //labelText: "Phone number",
-                    hintText: "Username",
-                    hintStyle: TextStyle(color: Colors.grey[500]),
-                    contentPadding:
-                        EdgeInsets.all(5), //  <- you can it to 0.0 for no space
-                    isDense: true,
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey[500])),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white))
-                    //border: InputBorder.none
-                    ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 0, bottom: 30, left: 30, right: 30),
-              child: TextField(
-                //maxLength: 10,
-                maxLines: 1,
-                minLines: 1,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    //labelText: "Phone number",
-                    focusColor: Colors.white,
-                    fillColor: Colors.white,
-                    hintText: "Email",
+                    hintText: "Confirmation Code",
                     hintStyle: TextStyle(color: Colors.grey[500]),
                     contentPadding:
                         EdgeInsets.all(5), //  <- you can it to 0.0 for no space
@@ -113,7 +101,7 @@ class _RegisterState extends State<Register> {
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                Confirmation()));
+                                Login()));
                       },
                       color: Theme.of(context).primaryColor,
                       elevation: 0,

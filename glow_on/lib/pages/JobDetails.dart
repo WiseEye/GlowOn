@@ -155,7 +155,7 @@ class _JobDetailsState extends State<JobDetails> {
                         margin: EdgeInsets.only(
                             left: 20, right: 20, bottom: 20, top: 20),
                         //color: Colors.white,
-                        clipBehavior: Clip.hardEdge,
+                        // clipBehavior: Clip.hardEdge,
                         height: 50,
 
                         decoration: BoxDecoration(

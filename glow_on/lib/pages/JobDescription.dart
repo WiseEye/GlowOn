@@ -103,7 +103,7 @@ class _JobDescriptionState extends State<JobDescription> {
                   child: TextFormField(
                     autocorrect: true,
                     autofocus: true,
-                    scrollPhysics: ClampingScrollPhysics(),
+                    // scrollPhysics: ClampingScrollPhysics(),
                     textInputAction: TextInputAction.done,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontFamily: "OpenSans", fontSize: 20),

@@ -1,16 +1,15 @@
-// import 'package:glow_on/pages/CustomJobTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:glow_on/pages/Confirmation.dart';
+import 'package:glow_on/pages/swipepage.dart';
 
-class Register extends StatefulWidget {
-  const Register({Key key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key key}) : super(key: key);
 
   @override
-  _RegisterState createState() => _RegisterState();
+  _LoginState createState() => _LoginState();
 }
 
-class _RegisterState extends State<Register> {
+class _LoginState extends State<Login> {
   PageController controller;
 
   double screenHight;
@@ -40,26 +39,36 @@ class _RegisterState extends State<Register> {
 
     screenHight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+     return MaterialApp(
+      title: 'Backgroun Image',
+      home: Scaffold(
+          body: DecoratedBox(
+              position: DecorationPosition.background,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                image: DecorationImage(
+                    image: AssetImage('/Users/jennanewcomb/GlowOn/GlowOn/glow_on/assets/images/face.png'),
+                    fit: BoxFit.cover),
+              ),
+              child:
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+               children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.only(top: 350, bottom: 0, left: 0, right: 150),
               child: Center(
                 child: Text(
-                  "Are you ready to get your GlowOn?",
+                  "GlowOn",
                   style: TextStyle(
-                    color: Colors.pink[300],
-                    fontSize: 25,
+                    color: Colors.white,
+                    fontSize: 55,
                   ),
                   textAlign: TextAlign.left,
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
+ Padding(
+              padding: const EdgeInsets.only(top: 30, bottom: 30, left: 30, right: 155),
               child: TextField(
                 //maxLength: 10,
                 maxLines: 1,
@@ -68,12 +77,12 @@ class _RegisterState extends State<Register> {
                 decoration: InputDecoration(
                     //labelText: "Phone number",
                     hintText: "Username",
-                    hintStyle: TextStyle(color: Colors.grey[500]),
+                    hintStyle: TextStyle(color: Colors.white),
                     contentPadding:
                         EdgeInsets.all(5), //  <- you can it to 0.0 for no space
                     isDense: true,
                     enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey[500])),
+                        borderSide: BorderSide(color: Colors.white)),
                     focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.white))
                     //border: InputBorder.none
@@ -81,7 +90,7 @@ class _RegisterState extends State<Register> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 0, bottom: 30, left: 30, right: 30),
+              padding: const EdgeInsets.only(top: 0, bottom: 30, left: 30, right: 155),
               child: TextField(
                 //maxLength: 10,
                 maxLines: 1,
@@ -92,12 +101,12 @@ class _RegisterState extends State<Register> {
                     focusColor: Colors.white,
                     fillColor: Colors.white,
                     hintText: "Email",
-                    hintStyle: TextStyle(color: Colors.grey[500]),
+                    hintStyle: TextStyle(color: Colors.white),
                     contentPadding:
                         EdgeInsets.all(5), //  <- you can it to 0.0 for no space
                     isDense: true,
                     enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey[500])),
+                        borderSide: BorderSide(color: Colors.white)),
                     focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.white))
                     //border: InputBorder.none
@@ -106,16 +115,16 @@ class _RegisterState extends State<Register> {
             ),
             Padding(
               padding:
-                  EdgeInsets.only(top: 10, bottom: 20, left: 20, right: 20),
+                  EdgeInsets.only(top:20, bottom:10, left:30, right:150),
               child: Container(
-                  height: 50,
+                  height: 40,
                   child: new MaterialButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                Confirmation()));
+                                Swipe()));
                       },
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).primaryColor.withOpacity(0.7),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(9.0)),
@@ -123,7 +132,7 @@ class _RegisterState extends State<Register> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           new Text(
-                            "Submit",
+                            "Login",
                             style: TextStyle(
                               color: Colors.white,
                               fontFamily: "OpenSans",
@@ -134,6 +143,8 @@ class _RegisterState extends State<Register> {
                       ))),
             )
           ],
+        ),
+        ),
         ));
   }
 }
